@@ -2,6 +2,7 @@
   <ion-content class="has-header padding">
     <h4>Enter Your Information</h4>
 
+    <div class="g-signin"></div>
     <label class="item item-input">
       <span class="input-label">Home Address</span>
       <input ng-model="user.homeAddress" type="text">
@@ -20,7 +21,7 @@
     </label>
 
     <ion-footer-bar class="bar-dark">
-      <button class="button" ng-click="postSettings(user)">
+      <button id='signin' class="button" ng-click="postSettings(user)">
         <i class="icon ion-compose"></i>
       </button>
     </ion-footer-bar>

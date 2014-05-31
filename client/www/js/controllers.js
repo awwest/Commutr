@@ -50,15 +50,26 @@ angular.module('app.controllers', [])
 
 }])
 
-.controller('SettingsCtrl', ['$rootScope', '$scope', 'ServerReq', function($rootScope, $scope, ServerReq) {
+.controller('SettingsCtrl', ['$rootScope', '$scope', 'ServerReq',  'GoogleOAuth', function($rootScope, $scope, ServerReq, GoogleOAuth) {
   $scope.postSettings = function(user){
-    user.name = 'nick wei';
-    user.email = 'nickwei@gmail.com';
-    console.log('data sent to server: ', user);
-    console.log('check: ', $rootScope.serverURL);
-    ServerReq.postReq($rootScope.serverURL + '/user', user)
-    .then(function(data) {
-      console.log('post data to server complete: ', data);
-    });
+    // gapi.auth.signIn({'clientid' : 'xxxxxxx.apps.googleusercontent.com', 'callback' : 'myCallback'});
+    // user.name = 'nick wei';
+    // user.email = 'nickwei@gmail.com';
+    GoogleOAuth.loginFlow('index.html');
+    // console.log('data sent to server: ', user);
+    // console.log('check: ', $rootScope.serverURL);
+    // ServerReq.postReq($rootScope.serverURL + '/user', user)
+    // .then(function(data) {
+    //   console.log('post data to server complete: ', data);
+    // });
   };
 }]);
+
+
+
+
+
+
+
+
+
